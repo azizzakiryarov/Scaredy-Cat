@@ -3,7 +3,8 @@ scaredycat.models.Cat = class {
     this.id = id;
     this.card = card;
   }
-  isThatCardACatCard() {
-    return true;
+
+  isThatCardACatCard(yourCard) {
+    return this.card === yourCard;
   }
 };

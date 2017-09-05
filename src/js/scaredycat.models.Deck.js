@@ -1,33 +1,17 @@
+// eslint class-methods-use-this: "error"
+// eslint no-undef: "error"
+
+const deck = [];
 scaredycat.models.Deck = class {
-  constructor() {
-    let deck = [];
-    let hand = [];
-    let table = [];
+  static getWholeDeck() {
+    for (let cardBird = 0; cardBird < 41; cardBird = +1) {
+      deck.push(new scaredycat.model.Bird());
+    }
+    for (let cardCat = 47; cardCat < 50; cardCat = +1) {
+      deck.push(new scaredycat.model.Cat());
+    }
+    for (let card = 41; card < 47; card = +1) {
+      deck.push(new scaredycat.model.ScaredyCat());
+    }
   }
-
-
-
-class ScaredyCat {
-  constructor(id, card) {
-    this.id = id;
-    this.card = card;
-  }
-  isThatCardAScaredyCatCard() {
-    return true;
-  }
-}
-
-getWholeDeck() {
-  for (let cardBird = 0; cardBird < 41; cardBird =+ 1){
-    deck.push(new Bird());
-  }
-  for (let cardCat = 47; cardCat < 50; cardCat =+ 1){
-    deck.push(new Cat());
-  }
-  for (let cardCat = 41; cardCat < 47; cardCat =+ 1){
-    deck.push(new ScaredyCat());
-  }
-}
-
-console.log(`Get whole deck: ${getWholeDeck}`);
-}
+};

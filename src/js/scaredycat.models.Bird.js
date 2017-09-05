@@ -4,7 +4,7 @@ scaredycat.model.Bird = class {
     this.card = card;
   }
 
-  isThatCardABirdCard(yourCard) {
+  isThatCardACatCard(yourCard) {
     return this.card === yourCard;
   }
 };
