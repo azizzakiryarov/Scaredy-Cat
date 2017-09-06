@@ -1,9 +1,3 @@
-// eslint no-undef: "error"
-// eslint no-plusplus: "error"
-// eslint no-param-reassign: "error"
-// eslint class-methods-use-this: "error"
-// eslint-env es6
-
 scaredycat.models.Deck = class {
   static getWholeDeck() {
     const deck = [];
@@ -19,6 +13,7 @@ scaredycat.models.Deck = class {
     return deck;
   }
 
+/*
   static shuffleArray(array) {
     for (let i = array.length - 1; i > 0; i -= 1) {
       const j = Math.floor(Math.random() * (i + 1));
@@ -28,4 +23,5 @@ scaredycat.models.Deck = class {
     }
     return array;
   }
+  */
 };

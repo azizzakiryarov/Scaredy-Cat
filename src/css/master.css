@@ -1,0 +1,17 @@
+body{
+  background-image: url(/Users/azizzakiryarov/Documents/workspace-web/node-project/scaredycat-game/src/pictures/background-picture.jpg);
+  position: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.welcome-title h1{
+  padding-left: 600px;
+  padding-top: 200px;
+  font-size: 30px;
+}
+.buttonPlay button {
+  margin-left: 780px;
+  font-size: 20px;
+  margin-top: 10px;
+  border-radius: 2px;
+}
