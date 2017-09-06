@@ -1,0 +1,45 @@
+body{}
+  .game-time,
+  .deck,
+  .deckTotal{
+    text-align: center;
+  }
+  .deck,
+  .deckTotal{
+    font-size: 20px;
+    padding-left: 10px;
+    padding-top: 10px;
+  }
+  .deckTotal{
+    padding-left: 2px;
+  }
+  .game-time{
+    font-size: 30px;
+    padding-top: 5px;
+  }
+  .player1,
+  .score1,
+  .score1Summa{
+    background-color: yellow;
+    float: left;
+  }
+  .player1 {
+    padding-left: 5px;
+  }
+  .score1{
+    padding-left: 5px;
+  }
+  .score1Summa{
+    padding-left: 5px;
+  }
+  .player2,
+  .score2,
+  .score2Summa{
+    background-color: yellow;
+    float: right;
+    padding-right: 10px;
+  }
+  .middle-elements img{
+    padding-top: 100px;
+    padding-left: 550px;
+  }
