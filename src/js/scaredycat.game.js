@@ -1,50 +1,61 @@
 window.addEventListener('DOMContentLoaded', () => {
-  const cards = [];
+  const cards = ['bird', 'bird', 'bird', 'bird', 'bird', 'bird', 'bird', 'bird', 'bird', 'bird',
+    'bird', 'bird', 'bird', 'bird', 'bird', 'bird', 'bird', 'bird', 'bird', 'bird',
+    'bird', 'bird', 'bird', 'bird', 'bird', 'bird', 'bird', 'bird', 'bird', 'bird',
+    'bird', 'bird', 'bird', 'bird', 'bird', 'bird', 'bird', 'bird', 'bird', 'bird', 'bird',
+    'cat', 'cat', 'cat', 'scarecrow',
+    'scarecrow', 'scarecrow', 'scarecrow', 'scarecrow', 'scarecrow'];
+  const bird = [];
+  const cat = [];
+  const scarecrow = [];
+  const hand = [];
+  const table = [];
   const cardsImg = document.getElementsByClassName('submiddle-element')[0];
-  const totalDeck = document.getElementsByClassName('deckTotal')[0];
-
+  const totalDeck = document.querySelector('.deckTotal');
+  const player1Score = document.querySelector('.score1Summa');
   console.log('Game Started');
 
-  function card(typeOfCard) {
-    this.typeOfCard = typeOfCard;
-  }
 
-  function getAllDeck() {
-    const bird = { name: 'bird' };
-    const cat = { name: 'cat' };
-    const scarecrow = { name: 'scarecrow' };
+  /*  
+    function shuffle(array) {
+    const currentIndex = array.length, temporaryValue, randomIndex;
 
-    // for (let b = 0; b < 41; b += 1) {
-    // for (let c = 41; c < 47; c += 1) {
-    // for (let sc = 47; sc < 50; sc += 1) {
-    // cards.push(card(bird.name), card(cat.name), card(scarecrow.name));
-    cards.push(10);
-    if (cards.length === 0) {
-      console.log('Empty');
+    // While there remain elements to shuffle...
+    while (currentIndex !== 0) {
+    // Pick a remaining element...
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex -= 1;
+
+      // And swap it with the current element.
+      temporaryValue = array[currentIndex];
+      array[currentIndex] = array[randomIndex];
+      array[randomIndex] = temporaryValue;
     }
-    // }
-    // }
-    // }
-    return cards;
+
+    return array;
   }
+ */
 
   function getACard() {
-    const hand = [];
-    hand.push(getAllDeck().pop);
+    hand.push(cards.pop());
     return hand;
   }
 
   function putACardOnTheTable() {
-    const table = [];
-    table.push(getACard().pop);
+    table.push(getACard().pop());
     return table;
   }
 
   function getAOneCard() {
     getACard();
-    console.log(`I take a card${getACard}`);
-    console.log(cards.length);
+    totalDeck.innerHTML = cards.length;
+    player1Score.innerHTML = hand.length;
+    console.log(`I take a card ${hand.length}`);
+    console.dir(`Deck:${cards.length}`);
+    console.log(`Bird : ${bird.length}`);
+    console.log(`Cat : ${cat.length}`);
+    console.log(`Scarecrow : ${scarecrow.length}`);
   }
+
   cardsImg.addEventListener('click', getAOneCard);
-  totalDeck.write('cards.length');
 });
