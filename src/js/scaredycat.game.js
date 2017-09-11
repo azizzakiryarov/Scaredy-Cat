@@ -1,5 +1,3 @@
-// eslint one-var-declaration-per-line: ["error", "initializations"]
-// eslint-env es6
 window.addEventListener('DOMContentLoaded', () => {
   class Card {
     constructor(typeOfCard) {
@@ -51,28 +49,22 @@ window.addEventListener('DOMContentLoaded', () => {
     table.push(getACard().pop());
     return table;
   }
-  /*
-  function shuffle(arra1) {
-    let ctr = arra1.length;
-    let temp;
-    let index;
 
-    // While there are elements in the array
-    while (ctr > 0) {
-      // Pick a random index
-      index = Math.floor(Math.random() * ctr);
-      // Decrease ctr by 1
-      ctr -= 1;
-      // And swap the last element with it
-      temp = arra1[ctr];
-      arra1[ctr] = arra1[index];
-      arra1[index] = temp;
+  function shuffle(array) {
+    let j;
+    let x;
+    let i = 0;
+    const len = array.length;
+    for (i; i < len; i += 1) {
+      j = Math.floor(Math.random() * len);
+      x = array[i];
+      array[i] = array[j];
+      array[j] = x;
     }
-    return arra1;
   }
-*/
+
   function getAOneCard() {
-    // shuffle(cards);
+    shuffle(cards);
     getACard();
     totalDeck.innerHTML = cards.length;
     player1Score.innerHTML = hand.length;
