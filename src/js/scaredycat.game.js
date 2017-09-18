@@ -1,19 +1,9 @@
 window.addEventListener('DOMContentLoaded', () => {
   console.log('Game Started...');
-  class Card {
-    constructor(typeOfCard, image) {
-      this.typeOfCard = typeOfCard;
-      this.image = image;
-    }
-    isBirdCard(birdCard) {
-      return this.image === birdCard;
-    }
-    isCatCard(catCard) {
-      return this.image === catCard;
-    }
-    isScareCrowCard(scarecrowCard) {
-      return this.image === scarecrowCard;
-    }
+
+  function Card(typeOfCard, image) {
+    this.typeOfCard = typeOfCard;
+    this.image = image;
   }
 
   const hand = [];
@@ -51,12 +41,12 @@ window.addEventListener('DOMContentLoaded', () => {
     hand.push(cards.pop());
     return hand;
   }
-  /*
+
   function putACardOnTheTable() {
     table.push(getACard().pop());
     return table;
   }
-*/
+
   function shuffle(array) {
     let j;
     let x;
@@ -69,7 +59,6 @@ window.addEventListener('DOMContentLoaded', () => {
       array[j] = x;
     }
   }
-
 
   function displayCardsOnTheTable() {
     cardBack.style.display = 'block';
@@ -90,6 +79,18 @@ window.addEventListener('DOMContentLoaded', () => {
     }, 1000);
   }
 
+  function compareToCards(otherCard) {
+    let result = true;
+    if (otherCard instanceof Card) {
+      if (this.image !== otherCard.image || this.typeOfCard !== otherCard.typeOfCard) {
+        result = false;
+      }
+    } else {
+      result = false;
+    }
+    return result;
+  }
+
   displayCardsOnTheTable();
   shuffle(cards);
 
@@ -99,14 +100,17 @@ window.addEventListener('DOMContentLoaded', () => {
     console.log(hand);
     totalDeck.innerHTML = cards.length;
     player1Score.innerHTML = hand.length;
-    if (getACardNow.image === cardBird.image) {
+
+    if (getACardNow.image === cardBird.image
+      || getACardNow.typeOfCard === cardBird.typeOfCard) {
       getACard();
       cardBird.style.display = 'block';
       cardCat.style.display = 'none';
       cardScarecrow.style.display = 'none';
       displayNoneBirdCard();
       console.log('getABirdCard...');
-    } else if (getACardNow.image === cardCat.image) {
+    } else if (getACardNow.image === cardCat.image
+      || getACardNow.typeOfCard === cardCat.typeOfCard) {
       while (hand.length > 0) {
         cards.push(hand.pop());
       }
@@ -115,15 +119,15 @@ window.addEventListener('DOMContentLoaded', () => {
       cardScarecrow.style.display = 'none';
       displayNoneCatCard();
       console.log('getACatCard...');
-    } else if (getACardNow.image === cardScarecrow.image) {
+    } else if (getACardNow.image === cardScarecrow.image
+      || getACardNow.typeOfCard === cardScarecrow.typeOfCard) {
       getACard();
       cardScarecrow.style.display = 'block';
       cardBird.style.display = 'none';
       cardCat.style.display = 'none';
       console.log('getAScarecrowCard...');
-    } else {
-      console.log('default');
     }
+
     if (cards.length === 0) {
       alert('Deck is Empty!!!\n GAME OVER!!!');
     }

@@ -1,7 +1,13 @@
+  body{
+    background-image: url(/Users/azizzakiryarov/Documents/workspace-web/node-project/scaredycat-game/src/pictures/background-game.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
   .game-time,
   .deck,
   .deckTotal{
     text-align: center;
+    color: white;
   }
   .deck,
   .deckTotal{
@@ -15,12 +21,13 @@
   .game-time{
     font-size: 30px;
     padding-top: 5px;
+    color: white;
   }
   .player1,
   .score1,
   .score1Summa{
-    background-color: yellow;
     float: left;
+    color: white;
   }
   .player1 {
     padding-left: 5px;
@@ -34,9 +41,9 @@
   .player2,
   .score2,
   .score2Summa{
-    background-color: yellow;
     float: right;
     padding-right: 10px;
+    color: white;
   }
 
   .table img{
@@ -47,38 +54,35 @@
   }
   #card-bird,
   #card-cat,
-  #card-scarecrow{
+  #card-scarecrow,
+  #card-back{
     height: 200px;
     width: 120px;
     position: absolute;
   }
   #card-back{
-    height: 15%;
-    width: 15%;
-    position: absolute;
     z-index: 3;
-    transform: rotate(90deg);
     left: 900px;
-    top: 380px;
+    top: 350px;
   }
 
   #card-bird{
-    left: 200px;
-    top: 330;
+    left: 600px;
+    top: 350px;
+    position: absolute;
+    z-index: 3;
   }
 
   #card-cat{
-    left: 400px;
-    top: 380px;
+    left: 450px;
+    top: 350px;
+    position: absolute;
+    z-index: 3;
   }
 
-
-  .myList{
-    left: 550px;
-    top: 500px;
-  }
-
-  .scarecrow{
-    padding-left: 5px;
-    margin-top: 200px;
+  #card-scarecrow{
+    left: 280px;
+    top: 350px;
+    position: absolute;
+    z-index: 3;
   }
